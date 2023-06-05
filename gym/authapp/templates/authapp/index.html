@@ -1,0 +1,19 @@
+
+{% extends 'authapp/layout.html'%}
+{% block title %} hi {% endblock %}
+ {% block content %}
+     {% if not request.user.is_authenticated %}
+
+        <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="signup" role="button">Регистрация</a>
+        </p>
+            {% else %}
+         <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="logout" role="button">Выйти</a>
+        </p>
+        <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="/" role="button">Добро пожаловать</a>
+                </p>
+         {% endif %}
+
+    {% endblock %}
