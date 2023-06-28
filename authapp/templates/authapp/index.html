@@ -1,0 +1,27 @@
+{% extends 'authapp/layout.html'%}
+{% load static %}
+{% block title %} hi {% endblock %}
+{% block page %}
+<h1 class="main_title"> Добро пожаловать </h1>
+{% endblock %}
+ {% block content %}
+     {% if not request.user.is_authenticated %}
+        <p>
+                    <a class="nav_link" href="signup">Регистрация</a>
+        </p>
+            {% else %}
+        <p>
+                    <a class="nav_link" href="join">Анкета</a>
+        </p>
+        <p>
+                    <a class="nav_link" href="profile">Профиль</a>
+        </p>
+         <p>
+                    <a class="nav_link" href="logout">Выйти</a>
+        </p>
+         {% endif %}
+
+     <p>
+                    <a class="nav_link" href="report">Панель администратора</a>
+        </p>
+    {% endblock %}
